@@ -1,0 +1,83 @@
+/**************
+Base styles
+*************/
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 980px;
+  background: #fff;
+
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+/**************
+Search styles
+*************/
+input {
+  margin: 50px auto;
+  display: block;
+  width: 460px;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+}
+
+/**************
+Image styles
+*************/
+
+.imgcaption {
+  display: none;
+}
+
+.imgcaption h1 {
+  font-size: 3em;
+}
+
+a {
+  display: inline-block;
+  width: 20%;
+  margin: 30px;
+  padding: 10px;
+}
+
+#gallery a img {
+  border-radius: 4%;
+  max-width: 100%;
+  transition: opacity:0 all ease-in-out .4s;
+  -webkit-animation: mymove 1s infinite;
+}
+
+
+@-webkit-keyframes mymove {
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+#gallery a img fadeOut {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: 50% !important;
+}
+
+/*-webkit-transition: 3s;
+-moz-transition: 3s;
+-ms-transition: 3s;
+-o-transition: 3s;
+transition: 3s;
+opacity: 50% !important;*/
