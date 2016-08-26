@@ -2,10 +2,10 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Lightbox Image Gallery</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/lightgallery.css" />
-    <link rel="stylesheet" href="css/unibox.css" />
+    <!-- <link rel="stylesheet" href="css/lightgallery.css" /> -->
     <link rel="stylesheet" href="css/styles.css" />
     <meta name="viewport" content="width=device-width" />
 </head>
@@ -20,25 +20,22 @@
 
             <div id="gallery">
 
-                <a href="img/01.jpg" data-sub-html="#cap01"><img src="img/Thumbnails/01.jpg" alt="Picture of image 01" />
-                    <div id="cap01" class="imgcaption">
-                        <h1>Hay Bales</h1>
-                        <p>I love hay bales. Took this snap on a drive through the countryside past some straw fields.</p>
-                    </div>
-                </a><!-- End image -->
-                <a href="img/02.jpg" data-sub-html="#cap02"><img src="img/Thumbnails/02.jpg" alt="Picture of image 02" />
-                    <div id="cap02" class="imgcaption">
-                        <h1>Lake</h1>
-                        <p>The lake was so calm today. We had a great view of the snow on the mountains from here.</p>
-                    </div>
-                </a><!-- End image -->
-                <a href="img/03.jpg" data-sub-html="#cap03"><img src="img/Thumbnails/03.jpg" alt="Picture of image 03" />
-                    <div id="cap03" class="imgcaption">
-                        <h1>Canyon</h1>
-                        <p>I hiked to the top of the mountain and got this picture of the canyon and trees below.</p>
-                    </div>
-                </a><!-- End image -->
-            </div><!-- End gallery -->
+                <a href="img/01.jpg" title='Hay Bales' class='active' data-caption="I love hay bales. Took this snap on a drive through the countryside past some straw fields"><img src="img/Thumbnails/01.jpg" alt="Picture of image 01" />
+                </a>
+                <!-- End image -->
+                <a href="img/02.jpg" title='Lake' class='active' data-caption="
+                The lake was so calm today. We had a great view of the snow on the mountains from here."><img src="img/Thumbnails/02.jpg" alt="Picture of image 02" />
+                </a>
+                <!-- End image -->
+                <a href="img/03.jpg" title='Canyon' class='active' data-caption="
+                I hiked to the top of the mountain and got this picture of the canyon and trees below."><img src="img/Thumbnails/03.jpg" alt="Picture of image 03" />
+                </a>
+                <!-- End image -->
+                <a href="img/04.jpg" title='Iceberg' class='active' data-caption="It was amazing to see an iceberg up close, it was so cold but didn’t snow today."><img src="img/Thumbnails/04.jpg" alt="Picture of image 04" />
+                </a>
+                <!-- End image -->
+            </div>
+            <!-- End gallery -->
         </div>
         <!-- End main content -->
 
@@ -48,8 +45,7 @@
     <!-- End page wrap -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
     </script>
-    <script src="js/lightgallery.js"></script>
-    <script src="js/unibox.js"></script>
+    <!-- <script src="js/lightgallery.js"></script> -->
     <script src="js/main.js"></script>
 </body>
 
