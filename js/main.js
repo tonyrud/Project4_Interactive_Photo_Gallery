@@ -17,7 +17,6 @@ $(document).ready(function() {
     var $prevPhoto = $('<div id="prevPhoto"><i class="fa fa-angle-left"></i></div>');
     var $nextPhoto = $('<div id="nextPhoto"><i class="fa fa-angle-right"></i></div>');
     var imgAnimDuration = 400;
-    var buttonAnimDuration = 200;
 
     /*****************
     Create lightbox elements
@@ -33,7 +32,7 @@ $(document).ready(function() {
     $imageContainer.append($captionHeader);
     $imageContainer.append($caption);
     // add to overlay
-    $overlay.append($imageContainer)
+    $overlay.append($imageContainer);
     $("body").append($overlay);
 
     /*****************
@@ -54,7 +53,7 @@ $(document).ready(function() {
             };
             imageCache.push(imageObject);
         });
-    };
+    }
 
 
 
@@ -134,8 +133,7 @@ $(document).ready(function() {
       $video.find('iframe').attr("src", "");
       $video.hide();
       $image.show();
-
-    };
+    }
 
     function createVideo(e) {
       //get source if event is passed
@@ -145,7 +143,7 @@ $(document).ready(function() {
 
       $image.hide();
       $video.show();
-    };
+    }
 
     /**********************
     Click based events
@@ -221,7 +219,7 @@ $(document).ready(function() {
             opacity: '0'
         }, 'fast', function() {
             $overlay.hide();
-        })
+        });
         $prevPhoto.fadeOut(imgAnimDuration);
         $nextPhoto.fadeOut(imgAnimDuration);
         $video.find('iframe').attr("src", "");
