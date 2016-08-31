@@ -1,140 +1,313 @@
-/**************
-Base styles
-*************/
+/*
+  *
+  **************
+  Base styles
+  ************
+*/
 
 * {
-    box-sizing: border-box;
-}
-.page-container {
-    margin: 0 auto;
-    text-align: center;
-    width: 980px;
-    background: #fff;
-}
-h1, h2, h3, p {
-    font-family: 'Lato', sans-serif;
+  box-sizing : border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/**************
-Search styles
-*************/
+.page-container {
+  margin     : 0 auto;
+  text-align : center;
+  max-width: 980px;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family : 'Lato',
+                sans-serif;
+}
+
+.primary-content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*
+  *
+  **************
+  Search styles
+  ************
+*/
 
 input {
-    margin: 50px auto;
-    display: block;
-    width: 460px;
-    height: 40px;
-    border-radius: 5px;
-    padding-left: 20px;
-    font-size: 1em;
-    border: 1px solid #ddd;
+  display       : block;
+  width         : 80%;
+  height        : 40px;
+  margin        : 50px auto;
+  padding-left  : 20px;
+  border        : 1px solid #ddd;
+  border-radius : 5px;
+  font-size     : 1em;
 }
 
-/**************
-Image styles
-*************/
+/*
+  *
+  **************
+  Image styles
+  ************
+*/
+
+#gallery {
+  width      : 100%;
+  margin     : 0 auto;
+}
 
 .imgcaption {
-    display: none;
-}
-.imgcaption h1 {
-    font-size: 3em;
-}
-a {
-    display: inline-block;
-    width: 20%;
-    margin: 15px;
-    padding: 10px;
+  display : none;
 }
 
-/********
-Lightbox styles
+.imgcaption h1 {
+  font-size : 3em;
+}
+
+a {
+  width   : 40%;
+  display : inline-block;
+
+}
+
+#gallery a {
+  animation : fadeIn 1s ease forwards;
+}
+
+#gallery a img {
+  max-width     : 100%;
+  border-radius : 4%;
+  transform     : scale(1);
+  transition    : all .4s ease;
+  filter: grayscale(0%) hue-rotate(0deg);
+}
+
+#gallery a img:hover {
+  transform : scale(1.05);
+  filter:  grayscale(50%) hue-rotate(-20deg);
+}
+
+/*********
+  Lightbox styles
 **********/
 
 #overlay {
-    background: rgba(0, 0, 0, .7);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    opacity: 0;
-    text-align: center;
-    z-index: 100;
+  z-index    : 100;
+  display    : none;
+  position   : fixed;
+  top        : 0;
+  left       : 0;
+  width      : 100%;
+  height     : 100%;
+  opacity    : 0;
+  background : rgba(0, 0, 0, .85);
+  text-align : center;
 }
+
+#imageContainer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  /*max-width: 80%;*/
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0, 0, 0, .25);
+}
+
 #overlay img {
-    width: 50%;
-    margin: 100px auto 0;
+  width  : 95%;
+  max-width: 800px;
+  margin : 0 -10px 0;
 }
 
-#overlay p,
-#overlay h1 {
-    color: #ddd;
-}
-
-/*lightbox buttons*/
-#prevPhoto, #nextPhoto {
-  display: inline-block;
-  position: relative;
-  height: 50px;
-  width: 50px;
-  top: 0px;
-  font-size: 3em;
-  color: #ddd;
-  opacity: 1;
+#overlay .video {
+  width  : 80%;
+  max-width: 800px;
+  height: 573px;
+  margin : 0 -10px 0;
   display: none;
-  cursor: pointer;
-  z-index: 1000;
-  margin: 0 auto;
-  transition: transform 0.2s, color 0.2s;
-  /*transform: scale(1, 1);*/
 }
 
-/*#prevPhoto {
-  left: calc(21vw);
+#overlay h1,
+#overlay p {
+  color : #ddd;
 }
-#nextPhoto {
-  right: calc(21vw);
-}*/
 
-#gallery a {
-    /*animation: fadeIn 1s ease forwards;*/
+#overlay h1 {
+  font-size : 7vw;
+  width: 100%;
 }
-#gallery a img {
-    border-radius: 4%;
-    max-width: 100%;
-    transform: scale(1);
-    transition: all .3s ease;
+
+#overlay p {
+  width       : 100%;
+  max-width:     600px;
+  margin      : 0 auto;
+  font-size   : 5vw;
+  font-weight : 300;
 }
-#gallery a img:hover {
-    transform: scale(1.05);
+
+/* * * lightbox buttons * * */
+
+#nextPhoto,
+#prevPhoto {
+  z-index    : 1000;
+  display    : none;
+  background:  rgba(0, 0, 0, 0.8);
+  color      : #ddd;
+  opacity    : 1;
+  font-size  : 5vw;
+  transform  : scale(1, 1);
+  transition : transform 0.5s;
+  cursor     : pointer;
 }
-@keyframes fadeOut {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    40% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0);
-        opacity: 0;
-    }
+
+#nextPhoto:hover,
+#prevPhoto:hover {
+  transform : scale(1.2, 1.2);
 }
+
+#nextPhoto i,
+#prevPhoto i {
+  padding: 5px;
+}
+
+  #prevPhoto {
+  margin-left: auto;
+  }
+  #nextPhoto {
+  margin-right: auto;
+  }
+
+  /*********
+  keyframes
+  **********/
+
 @keyframes fadeIn {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    40% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  0% {
+    opacity   : 0;
+    transform : scale(0);
+  }
+
+  40% {
+    opacity   : 1;
+    transform : scale(1.05);
+  }
+
+  100% {
+    opacity   : 1;
+    transform : scale(1);
+  }
+}
+
+/***************
+  media queries
+****************/
+
+@media (min-width: 768px) {
+  .primary-content {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  input {
+    width         : 460px;
+    margin        : 50px auto;
+    padding-left  : 20px;
+    border        : 1px solid #ddd;
+    border-radius : 5px;
+    font-size     : 1em;
+  }
+
+  a {
+    width   : 19%;
+    margin  : 5px;
+    padding : 2px;
+  }
+
+  #overlay h1 {
+    font-size : 3.5vw;
+    width: 100%;
+  }
+
+  #overlay p {
+    width       : 50%;
+    max-width:     600px;
+    margin      : 0 auto;
+    font-size   : 3vw;
+    font-weight : 300;
+  }
+
+  #overlay img {
+    width  : 70%;
+    max-width: 800px;
+    margin : 0 30px 0;
+  }
+
+  #nextPhoto i,
+  #prevPhoto i {
+    padding: 10px;
+  }
+
+  #nextPhoto,
+  #prevPhoto {
+    background:  none;
+    color      : #ddd;
+    opacity    : 1;
+    font-size  : 7vw;
+  }
+
+  #overlay .video {
+    margin : 0 20px 0;
+  }
+
+}
+
+
+@media (min-width: 1024px) {
+  input {
+    display       : block;
+    width         : 460px;
+    height        : 40px;
+    margin        : 50px auto;
+    padding-left  : 20px;
+    border        : 1px solid #ddd;
+    border-radius : 5px;
+    font-size     : 1em;
+  }
+
+  a {
+    width   : 20%;
+    margin  : 15px;
+    padding : 5px;
+  }
+
+  #overlay img {
+    width  : 80%;
+    max-width: 800px;
+    margin : 0 30px 0;
+  }
+
+  #nextPhoto,
+  #prevPhoto {
+    font-size  : 5vw;
+  }
+
+  #overlay h1 {
+    font-size : 2.5vw;
+    width: 100%;
+  }
+
+  #overlay p {
+    width       : 50%;
+    max-width:     600px;
+    font-size   : 2vw;
+  }
+
 }
