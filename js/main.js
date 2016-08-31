@@ -67,8 +67,6 @@ $(document).ready(function() {
             $caption.fadeOut(imgAnimDuration);
             $image.fadeOut(imgAnimDuration);
             $video.fadeOut(imgAnimDuration);
-            var isVideo = $galleryImgs.attr("data-type");
-            console.log(isVideo);
             //fade out image/video, set new image when complete
             $image.fadeOut(imgAnimDuration, function() {
               if (currentLocation >= 12 || $galleryImgs.attr("data-type") === 'video') {
@@ -129,7 +127,6 @@ $(document).ready(function() {
     }
 
     function createImage(e) {
-      console.log('create image ran');
       //get source if event is passed
       if (e) {
         $image.attr("src", e);
@@ -141,7 +138,6 @@ $(document).ready(function() {
     };
 
     function createVideo(e) {
-      console.log('create video ran');
       //get source if event is passed
       if (e) {
         $video.find('iframe').attr("src", e);
@@ -176,7 +172,7 @@ $(document).ready(function() {
         //create array from filtered items
         populateArray();
 
-        console.log("currentLocation variable is " + currentLocation + ". Active amount is " + totalActive);
+        //console.log("currentLocation variable is " + currentLocation + ". Active amount is " + totalActive);
 
         var captionText = $(this).attr('data-caption');
         var captionHeader = $(this).attr('title');
@@ -192,7 +188,6 @@ $(document).ready(function() {
 
         //hide arrows if only one image
         if (imageCache.length === 1) {
-            console.log('cache is 1');
             $nextPhoto.hide();
             $prevPhoto.hide();
         }
@@ -204,7 +199,7 @@ $(document).ready(function() {
         //remove bubbling
         event.stopPropagation();
         currentLocation++;
-        console.log('current location is ' + currentLocation);
+        //console.log('current location is ' + currentLocation);
         fadeImgs();
         btnDisplay(this);
     });
@@ -213,7 +208,7 @@ $(document).ready(function() {
         //remove bubbling
         event.stopPropagation();
         currentLocation--;
-        console.log('current location is ' + currentLocation);
+        //console.log('current location is ' + currentLocation);
         fadeImgs();
         btnDisplay(this);
     });
